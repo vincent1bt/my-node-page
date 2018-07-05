@@ -1,0 +1,6 @@
+node_modules
+npm-debug.log
+/tmp
+/tests
+/nginx
+/db
