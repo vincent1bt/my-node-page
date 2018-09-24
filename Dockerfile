@@ -6,7 +6,7 @@ COPY ./package.json /nodeapp
 COPY ./package-lock.json /nodeapp
 
 RUN npm install -g nodemon
-RUN npm install knex -g
+RUN npm install -g knex
 RUN npm install
 
 COPY ./ /nodeapp

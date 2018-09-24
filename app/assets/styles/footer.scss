@@ -1,0 +1,67 @@
+.footer {
+  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  width: 100%;
+  z-index: 110;
+  height: 50px;
+  bottom: 0;
+
+  @media (min-width: 650px) {
+    display: none;
+  }
+
+  &-nav {
+    height: 100%;
+
+    &-list {
+      height: 100%;
+      display: flex;
+      padding: 0;
+      margin: 0;
+      justify-content: flex-end;
+
+      &-item {
+        list-style: none;
+        line-height: 65px;
+        position: static;
+        height: 100%;
+
+        &-admin {
+          width: 25%;
+        }
+
+        &-normal {
+          width: 33.3%;
+        }
+
+        &-link {
+          text-decoration: none;
+          color: black;
+          height: 100%;
+          width: 100%;
+          display: block;
+          text-align: center;
+
+          &-icon {
+            height: 100%;
+            width: 100%;
+            margin: 1% auto;
+
+            &-image {
+              margin-bottom: 10px;
+              height: 25px;
+            }
+
+            &-text {
+              height: 50%;
+              font-size: 0.9em;
+              font-weight: lighter;
+              margin-top: -30px;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

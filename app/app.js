@@ -1,34 +1,36 @@
 const express = require('express');
-const { createPost, getPost } = require('./models/post');
+const passport = require('passport');
+const cookieSession = require('cookie-session');
+const path = require('path');
+const bodyParser = require('body-parser');
+const expressSanitizer = require('express-sanitizer');
+const methodOverride = require('method-override');
+const flash = require('connect-flash');
 
+const postsRouter = require('./routes/posts');
+const categoriesRouter = require('./routes/categories');
+const applicationRouter = require('./routes/application');
+
+const configurePassport = require('./utils/passport');
+const weekTime =  7 * 24 * 3600 * 1000;
+
+configurePassport();
 const app = express();
+app.set('trust proxy', 'loopback');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
+app.use(expressSanitizer());
+app.use(cookieSession({
+  name: 'session',
+  keys: ['theKeyCat'],
+  maxAge: weekTime
+}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.get('/', (request, response) => {
-  response.send('all works');
-});
-
-app.get('/post', async (request, response) => {
-  try {
-    const [data] = await getPost(1);
-    console.log(data);
-
-    response.send(`
-      <style>
-        body {
-          background-image: linear-gradient(120deg, ${data.colors.first}, ${data.colors.second});
-        }
-      </style>
-
-      <body >
-        <h1>${data.title}</h1>
-        <p>${data.title}</p>
-        <img src='${data.image}'/>
-      </body>`
-    );
-
-  } catch (error) {
-    console.error(error);
-  }
-});
+app.use('/posts', postsRouter);
+app.use('/categories', categoriesRouter);
+app.use('/', applicationRouter);
 
 module.exports = app;

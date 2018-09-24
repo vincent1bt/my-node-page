@@ -1,0 +1,217 @@
+.container {
+  &-common_header {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-size: 1.2em;
+    overflow: hidden;
+    text-align: center;
+    color: #2c3e50;
+  }
+
+  &-posts_header {
+    height: 300px;
+
+    &-name {
+      margin-top: 50px;
+      font-size: 2.2em;
+      margin-bottom: 0px;
+    }
+
+    &-subname {
+      margin: 10px;
+    }
+  }
+
+  &-category_header {
+    height: 300px;
+    &-name {
+      margin-top: 50px;
+      font-size: 2.2em;
+      margin-bottom: 0px;
+    }
+  }
+
+  &-categories_header {
+    height: 250px;
+
+    &-name {
+      margin-top: 50px;
+      font-size: 2.2em;
+      margin-bottom: 0px;
+    }
+  }
+
+  &-form {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 5% 80% 10% 5%;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 2% 76% 20% 2%;
+    }
+
+    @media (max-width: 650px) {
+      grid-template-columns: 1% 78% 20% 1%;
+    }
+
+    &-search {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      padding-right: 10px;
+      padding-left: 10px;
+      border-top: 1px solid rgba(0,0,0,.54);
+      border-left: 1px solid rgba(0,0,0,.54);
+      border-bottom: 1px solid rgba(0,0,0,.54);
+      border-right: 0px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-button {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      border: 0;
+      background-image: linear-gradient(120deg, #155799, #159957);
+      color: white;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      padding: 8px 0;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &-content {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    overflow: hidden;
+
+    &-default_response {
+      text-align: center;
+      margin: 0;
+      font-size: 1.5em;
+      color: #2c3e50;
+      font-weight: lighter;
+    }
+
+    &-error {
+      color: white;
+      background: #e74c3c;
+      padding: 1px 15px;
+      margin: 10px 0;
+
+      &-title {
+        font-size: 1.5em;
+      }
+
+      &-detail {
+        font-size: 1.3em;
+        margin-top: 20px;
+        margin-bottom: 5px;
+      }
+
+      &-description {
+
+      }
+    }
+
+    &-item {
+      border: 1px solid white;
+      margin-bottom: 10px;
+      border-radius: 6px;
+
+      &-blur {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 6px;
+        transition: background 0.5s ease-in;
+      }
+
+      &:hover &-blur {
+        background: rgba(0, 0, 0, 0.6);
+      }
+
+
+      &-categories-text {
+        font-weight: lighter;
+        padding-right: 15px;
+        color: white;
+      }
+
+      h3 {
+        color: white;
+        font-weight: bolder;
+      }
+
+      &-link {
+        width: 100%;
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+
+        &-text {
+          color: white;
+          margin-bottom: 15px;
+          padding-right: 15px;
+          font-weight: lighter;
+        }
+
+        &-date {
+          color: white;
+          font-weight: lighter;
+        }
+      }
+    }
+
+    &-pagination {
+      &-list {
+        display: flex;
+        padding: 0;
+
+        &-item {
+          list-style: none;
+          border: 1px solid rgba(0,0,0,.54);
+          position: static;
+          padding-right: 20px;
+
+          &:hover {
+            background: rgba(0,0,0,.54);
+
+            a {
+              color: white;
+            }
+          }
+
+          &:first-child {
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+          }
+
+          &:last-child {
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+          }
+
+          &:nth-child(1n+2) {
+            border-left: none;
+          }
+
+          &-link {
+            width: 100%;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            padding: 10px;
+            color: #222222;
+          }
+        }
+      }
+    }
+  }
+}

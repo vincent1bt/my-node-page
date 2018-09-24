@@ -1,0 +1,33 @@
+version: "3.1"
+
+services:
+  mypage-db-service:
+    container_name: mypage-db-service
+    restart: always
+    build: ./app/db
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=${MYPAGE_PG_USER}
+      - POSTGRES_PASSWORD=${MYPAGE_PG_PASSWORD}
+      - NODE_ENV=production
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+
+  mypage-app-service:
+    container_name: mypage-app-service
+    restart: always
+    build: ./
+    command: nodemon server.js
+    environment:
+      - DATABASE_PROD_URL=${DATABASE_PROD_URL}
+    depends_on:
+      - mypage-db-service
+  mypage-nginx-service:
+    container_name: mypage-nginx-service
+    restart: always
+    build: ./app/nginx
+    ports:
+      - '443:443'
+    depends_on:
+      - mypage-app-service

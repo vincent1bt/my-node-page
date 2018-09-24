@@ -1,4 +1,4 @@
 node_modules
 tmp
-nginx/certificates
-nginx/keys
+
+**/.DS_Store

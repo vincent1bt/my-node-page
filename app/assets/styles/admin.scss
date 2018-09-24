@@ -1,0 +1,125 @@
+.container {
+  margin-bottom: 70px;
+
+  &-common_header {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-size: 1.2em;
+    overflow: hidden;
+    height: 280px;
+
+    &-name {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 2.7em;
+      //margin-bottom: 0px;
+      color: #2c3e50;
+    }
+
+    &-link {
+      text-decoration: none;
+      display: block;
+      color: #2c3e50;
+      font-size: 1.1em;
+      padding: 10px;
+      font-weight: lighter;
+      border-bottom: 1px solid #bdc3c7;
+
+      &_logout {
+        color: #b52a1d;
+        font-weight: normal;
+
+        &:hover {
+          font-weight: lighter !important;
+        }
+      }
+
+      &:hover {
+        font-weight: normal;
+      }
+    }
+  }
+
+  &-content {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-size: 1.2em;
+    overflow: hidden;
+    color: #2c3e50;//rgba(0,0,0,.74);
+
+    &-names {
+      font-size: 1.6em;
+      margin-top: 50px;
+      margin-bottom: 15px;
+      font-weight: lighter;
+    }
+
+    &-item {
+      //border-bottom: 1px solid;
+      padding: 1px 25px;
+      background: #ecf0f1;
+      margin-bottom: 10px;
+      margin-left: 15px;
+
+      &:nth-child(2n) {
+        background: #f5f6fa;
+      }
+
+      &-postlink {
+        margin: 5px;
+        text-decoration: none;
+        color: #34495e;
+
+        h3 {
+          margin: 5px 0px;
+          padding-top: 15px;
+          padding-bottom: 5px;
+          font-size: 1.2em;
+          font-weight: lighter;
+        }
+      }
+
+      &-options {
+        display: flex;
+        font-size: 1em;
+        margin-bottom: 10px;
+        font-weight: lighter;
+
+        &-update {
+          background: #ecf0f1;
+          border-radius: 4px;
+          color: #159957;
+          text-decoration: none;
+          padding: 3px 15px;
+          height: 22px;
+          box-shadow: -1px 15px 55px -12px rgba(0,0,0,0.75);
+
+          &:hover {
+            font-weight: normal;
+          }
+        }
+
+        form {
+          margin-bottom: 10px;
+        }
+
+        &-delete {
+          background: #ecf0f1;
+          border-radius: 4px;
+          color: #b52a1d;
+          text-decoration: none;
+          padding: 3px 15px;
+          border: 0;
+          margin-left: 10px;
+          cursor: pointer;
+          box-shadow: -1px 15px 55px -12px rgba(0,0,0,0.75);
+          font-weight: lighter;
+
+          &:hover {
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}

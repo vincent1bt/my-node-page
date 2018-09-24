@@ -1,0 +1,2 @@
+"use strict";var React=require("react"),Error=function(a){var b=a.error,c=a.description,d=c?JSON.stringify(c):"There is not details";//Object.entries(description).map(x=>x.join(": ")).join("\n")
+return React.createElement("div",{className:"container-content-error"},React.createElement("p",{className:"container-content-error-title"},b),React.createElement("p",{className:"container-content-error-detail"},"Details:"),React.createElement("pre",{className:"container-content-error-description"},d))};module.exports=Error;
