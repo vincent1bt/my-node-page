@@ -5,10 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "NODE_ENV=test nyc ava",
-    "convert": "babel ./app/reactViews -d ./app/views --watch",
+    "convert": "babel ./app/reactViews -d ./app/views",
     "build": "webpack --mode production",
-    "dev": "webpack --mode development",
-    "reactBuild": "webpack --config webpack.config.react.js --mode production"
+    "dev": "webpack --mode development"
   },
   "nodemonConfig": {
     "ignore": [
