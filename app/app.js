@@ -32,5 +32,8 @@ app.use(passport.session());
 app.use('/posts', postsRouter);
 app.use('/categories', categoriesRouter);
 app.use('/', applicationRouter);
+app.use((request, response) => {
+  response.redirect("/");
+});
 
 module.exports = app;

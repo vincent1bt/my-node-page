@@ -12,7 +12,7 @@ services:
       - POSTGRES_PASSWORD=${MYPAGE_PG_PASSWORD}
       - NODE_ENV=production
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+      - ~/tmp/db:/var/lib/postgresql/data
 
   mypage-app-service:
     container_name: mypage-app-service
