@@ -9,6 +9,10 @@ const AboutComponent = require('./../views/about');
 const AdminComponent = require('./../views/application/admin');
 const LoginComponent = require('./../views/application/login');
 const IndexComponent = require('./../views/posts/index');
+
+const indexTemplate = require('./../views/posts/indexTemplate');
+const aboutTemplate = require('./../views/aboutTemplate');
+
 const { admin } = require('./../controllers/application');
 const { index } = require('./../controllers/posts');
 
@@ -18,7 +22,8 @@ applicationRouter.get('/', index, (request, response) => {
   const { posts, count } = request;
   const isAdmin = authenticated(request);
   const body = renderToString(react.createElement(IndexComponent, { posts, count, isAdmin }));
-  response.status(200).send(body);
+  const html = indexTemplate(body);
+  response.status(200).send(html);
 });
 
 applicationRouter.get('/admin', [ensureLoggedIn("/posts"), admin], (request, response) => {
@@ -33,7 +38,8 @@ applicationRouter.get('/sobre', (request, response) => {
   const { user } = request;
   const isAdmin = authenticated(request);
   const body = renderToString(react.createElement(AboutComponent, { isAdmin }));
-  response.status(200).send(body);
+  const html = aboutTemplate(body);
+  response.status(200).send(html);
 });
 
 applicationRouter.get('/login', (request, response) => {

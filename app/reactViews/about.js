@@ -7,19 +7,7 @@ const Meta = require('./meta');
 
 const About = ({ isAdmin }) => {
   return (
-    <html lang="es">
-      <head>
-        <Meta />
-        <link rel="stylesheet" type="text/css" href="/public/styles/application.css" />
-        <link rel="stylesheet" type="text/css" href="/public/styles/about.css" />
-      </head>
-      <Safe.script async src="https://www.googletagmanager.com/gtag/js?id=UA-69916304-2"></Safe.script>
-      <Safe.script>
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push('js', new Date());
-        window.dataLayer.push('config', 'UA-69916304-2');
-      </Safe.script>
-      <body>
+      <React.Fragment>
         <Header isAdmin={isAdmin} />
         <main className="container">
           <section className="container-common_header">
@@ -28,19 +16,20 @@ const About = ({ isAdmin }) => {
               Hola, mi nombre es <strong>vicente</strong> y esta es mi pagina web donde comparto tutoriales de lo que voy aprendiendo.
               Si necesitas algún tipo de ayuda puedes preguntar en mi <a href="https://twitter.com/vincent1bt">twitter</a> y con gusto te ayudare.
             </p>
-            <p>Las tecnologias que domino son:</p>
+            <p>Las tecnologias que me gustan</p>
             <ul className="container-list">
+              <li>Javascript (React, Redux, Node, Webpack, Gulp)</li>
               <li>Ruby, Rails</li>
               <li>Swift</li>
+              <li>Tensorflow, Keras, Data scientist</li>
               <li>Go</li>
               <li>Git</li>
-              <li>Javascript (React, Redux, Jquery, Node, Webpack, Gulp)</li>
               <li>Html (Css, Sass, Responsive Design)</li>
               <li>PostgreSQL, Mysql, MongoDB</li>
               <li>Linux (Servidores, Nginx)</li>
               <li>SEO (Google Analytics)</li>
             </ul>
-            <h3 className="container-subtitle">Mis proyectos</h3>
+            <h3 className="container-subtitle">Algunos de mis proyectos</h3>
 
           </section>
 
@@ -84,8 +73,8 @@ const About = ({ isAdmin }) => {
               Front-end Pages
             </h4>
             <div className="container-content-img">
-              <img src="https://res.cloudinary.com/vincent1bt/image/upload/v1478293589/Screenshot_2016-11-04_15.02.41_fzktju.png" alt="page 1"/>
-              <img src="https://res.cloudinary.com/vincent1bt/image/upload/v1478293590/Screenshot_2016-11-04_15.00.40_kvma47.png" alt="page 2"/>
+              <img src="https://res.cloudinary.com/vincent1bt/image/upload/v1478293589/Screenshot_2016-11-04_15.02.41_fzktju.jpg" alt="page 1"/>
+              <img src="https://res.cloudinary.com/vincent1bt/image/upload/v1478293590/Screenshot_2016-11-04_15.00.40_kvma47.jpg" alt="page 2"/>
             </div>
             <p>
               Paginas de Facebook y 3Djuegos con diseños mas amigables al usuario y con mejor-front end que las originales
@@ -117,8 +106,7 @@ const About = ({ isAdmin }) => {
           </section>
         </main>
         <Footer isAdmin={isAdmin} />
-      </body>
-    </html>
+     </React.Fragment>
   );
 }
 

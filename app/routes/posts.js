@@ -9,6 +9,10 @@ const EditComponent = require('./../views/posts/edit');
 const NewComponent = require('./../views/posts/new');
 const IndexComponent = require('./../views/posts/index');
 const SearchComponent = require('./../views/posts/search');
+const MetaComponent = require('./../views/meta');
+
+const indexTemplate = require('./../views/posts/indexTemplate');
+const showTemplate = require('./../views/posts/showTemplate');
 
 const { createPostValidation, updatePostValidation } = require('./../validations/post');
 
@@ -29,7 +33,8 @@ postsRouter.get('/', index, (request, response) => {
   const { posts, count } = request;
   const isAdmin = authenticated(request);
   const body = renderToString(react.createElement(IndexComponent, { posts, count, isAdmin }));
-  response.status(200).send(body);
+  const html = indexTemplate(body);
+  response.status(200).send(html);
 });
 
 postsRouter.get('/new', [ensureLoggedIn("/posts"), newPost], (request, response) => {
@@ -44,14 +49,17 @@ postsRouter.get('/buscar', search, (request, response) => {
   const isAdmin = authenticated(request);
   const { term } = request.query;
   const body = renderToString(react.createElement(SearchComponent, { posts, term, isAdmin }));
-  response.status(200).send(body);
+  const html = indexTemplate(body);
+  response.status(200).send(html);
 });
 
 postsRouter.get('/:id', show, (request, response) => {
   const { post, categories } = request.postObject;
   const isAdmin = authenticated(request);
   const body = renderToString(react.createElement(ShowComponent, { post, categories, isAdmin }));
-  response.status(200).send(body);
+  const meta = renderToString(react.createElement(MetaComponent, { ...post }));
+  const html = showTemplate(body, meta);
+  response.status(200).send(html);
 });
 
 postsRouter.post('/', [ensureLoggedIn("/posts"), createPostValidation, create], (request, response) => {

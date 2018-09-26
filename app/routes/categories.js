@@ -9,6 +9,9 @@ const NewComponent = require('./../views/categories/new');
 const EditComponent = require('./../views/categories/edit');
 const ShowComponent = require('./../views/categories/show');
 
+const indexTemplate = require('./../views/categories/indexTemplate');
+const showTemplate = require('./../views/categories/showTemplate');
+
 const { createCategoryValidation, updateCategoryValidation } = require('./../validations/category');
 
 const {
@@ -26,7 +29,8 @@ categoriesRouter.get('/', index, (request, response) => {
   const { categories } = request;
   const isAdmin = authenticated(request);
   const body = renderToString(react.createElement(IndexComponent, { categories, isAdmin }));
-  response.status(200).send(body);
+  const html = indexTemplate(body);
+  response.status(200).send(html);
 });
 
 categoriesRouter.get('/new', ensureLoggedIn("/posts"), (request, response) => {
@@ -39,7 +43,8 @@ categoriesRouter.get('/:id', show, (request, response) => {
   const { category, posts } = request;
   const isAdmin = authenticated(request);
   const body = renderToString(react.createElement(ShowComponent, { posts, category, isAdmin }));
-  response.status(200).send(body);
+  const html = showTemplate(body);
+  response.status(200).send(html);
 });
 
 categoriesRouter.post('/', [ensureLoggedIn("/posts"), createCategoryValidation, create], (request, response) => {
