@@ -14,11 +14,11 @@ const Index = ({ posts, count, isAdmin }) => {
         <link rel="canonical" href="https://vincentblog.xyz/posts" />
         <link rel="stylesheet" type="text/css" href="/public/styles/application.css" />
       </head>
+      <Safe.script async src="https://www.googletagmanager.com/gtag/js?id=UA-69916304-2"></Safe.script>
       <Safe.script>
-        `
-        ReactGA.initialize('UA-69916304-2');
-        ReactGA.pageview('/posts');
-        `
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push('js', new Date());
+        window.dataLayer.push('config', 'UA-69916304-2');
       </Safe.script>
       <body>
         <Header isAdmin={isAdmin} />

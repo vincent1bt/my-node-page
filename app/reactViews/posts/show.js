@@ -15,11 +15,11 @@ const Show = ({ post, categories, isAdmin }) => {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
       </head>
+      <Safe.script async src="https://www.googletagmanager.com/gtag/js?id=UA-69916304-2"></Safe.script>
       <Safe.script>
-        `
-        ReactGA.initialize('UA-69916304-2');
-        ReactGA.pageview('/posts${post.slug}');
-        `
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push('js', new Date());
+        window.dataLayer.push('config', 'UA-69916304-2');
       </Safe.script>
       <body>
         <Header isAdmin={isAdmin} />

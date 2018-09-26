@@ -55,6 +55,8 @@
     }
 
     &-search {
+      -webkit-appearance: none;
+      border-radius: 0;
       grid-column-start: 2;
       grid-column-end: 3;
       padding-right: 10px;
@@ -72,6 +74,8 @@
     }
 
     &-button {
+      -webkit-appearance: none;
+      border-radius: 0;
       grid-column-start: 3;
       grid-column-end: 4;
       border: 0;

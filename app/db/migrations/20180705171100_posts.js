@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
     table.string('image');
     table.jsonb('colors');
     table.text('body');
-    table.timestamps().defaultTo(knex.fn.now());
+    table.timestamps();
   });
 };
 

@@ -21,11 +21,11 @@ const Search = ({ posts, term, isAdmin }) => {
         <link rel="stylesheet" type="text/css" href="/public/styles/application.css" />
         <link rel="canonical" href="https://vincentblog.xyz/posts" />
       </head>
+      <Safe.script async src="https://www.googletagmanager.com/gtag/js?id=UA-69916304-2"></Safe.script>
       <Safe.script>
-        `
-        ReactGA.initialize('UA-69916304-2');
-        ReactGA.pageview('/search');
-        `
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push('js', new Date());
+        window.dataLayer.push('config', 'UA-69916304-2');
       </Safe.script>
       <body>
         <Header isAdmin={isAdmin} />

@@ -22,6 +22,7 @@ services:
       - DATABASE_DEV_URL=${DATABASE_DEV_URL}
       - DATABASE_TEST_URL=${DATABASE_TEST_URL}
       - DATABASE_PROD_URL=${DATABASE_PROD_URL}
+      - NODE_ENV=development
     depends_on:
       - mypage-db-service
   mypage-nginx-service:
