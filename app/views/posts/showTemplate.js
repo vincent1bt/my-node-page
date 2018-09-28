@@ -10,14 +10,11 @@ function showTemplate(body, meta) {
       <head>
         ${meta}
         <link rel="stylesheet" type="text/css" href="/public/styles/post.css" />
-        <link rel="canonical" href="https://vincentblog.xyz/posts" />
-        <link rel="stylesheet" type="text/css" href="/public/styles/application.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
+        <script async src="/public/js/show.js"></script>
+        <script async src="/public/js/highlight.pack.js"></script>
       </head>
       <body>
         ${body}
-        <script src="/public/js/show.js"></script>
       </body>
     </html>
   `

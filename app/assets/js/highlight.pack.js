@@ -1,0 +1,30 @@
+import hljs from 'highlight.js/lib/highlight';
+import javascript from 'highlight.js/lib/languages/javascript';
+import python from 'highlight.js/lib/languages/python';
+import sql from 'highlight.js/lib/languages/sql';
+import swift from 'highlight.js/lib/languages/swift';
+import nginx from 'highlight.js/lib/languages/nginx';
+import json from 'highlight.js/lib/languages/json';
+import go from 'highlight.js/lib/languages/javascript';
+import ruby from 'highlight.js/lib/languages/ruby';
+import erb from 'highlight.js/lib/languages/erb';
+import dockerfile from 'highlight.js/lib/languages/dockerfile';
+import markdown from 'highlight.js/lib/languages/markdown';
+import css from 'highlight.js/lib/languages/css';
+import bash from 'highlight.js/lib/languages/bash';
+
+hljs.registerLanguage('python', python);
+hljs.registerLanguage('sql', sql);
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('swift', swift);
+hljs.registerLanguage('nginx', nginx);
+hljs.registerLanguage('json', json);
+hljs.registerLanguage('go', go);
+hljs.registerLanguage('ruby', ruby);
+hljs.registerLanguage('erb', erb);
+hljs.registerLanguage('dockerfile', dockerfile);
+hljs.registerLanguage('markdown', markdown);
+hljs.registerLanguage('css', css);
+hljs.registerLanguage('bash', bash);
+
+hljs.initHighlighting();
