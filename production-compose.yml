@@ -16,7 +16,9 @@ services:
   mypage-app-service:
     container_name: mypage-app-service
     restart: always
-    build: ./DockerfileProduction
+    build:
+        context: .
+        dockerfile: DockerfileProduction
     environment:
       - DATABASE_PROD_URL=${DATABASE_PROD_URL}
       - NODE_ENV=production
