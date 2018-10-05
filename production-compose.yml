@@ -16,8 +16,7 @@ services:
   mypage-app-service:
     container_name: mypage-app-service
     restart: always
-    build: ./
-    command: nodemon server.js
+    build: ./DockerfileProduction
     environment:
       - DATABASE_PROD_URL=${DATABASE_PROD_URL}
       - NODE_ENV=production

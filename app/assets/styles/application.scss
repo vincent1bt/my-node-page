@@ -6,6 +6,17 @@
     overflow: hidden;
     text-align: center;
     color: #2c3e50;
+
+    &-main_link {
+      text-decoration: none;
+      color: white;
+      background: #34495e;
+      padding: 10px;
+      display: block;
+      margin-top: 30px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
   }
 
   &-posts_header {

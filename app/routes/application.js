@@ -1,10 +1,10 @@
 const express = require('express');
-const react = require('react');
 const passport = require('passport');
+const applicationRouter = express.Router({ mergeParams: true });
+const react = require('react');
 const { renderToString } = require('react-dom/server');
 const { ensureLoggedIn } = require('connect-ensure-login');
 
-const applicationRouter = express.Router({ mergeParams: true });
 const AboutComponent = require('./../views/about');
 const AdminComponent = require('./../views/application/admin');
 const LoginComponent = require('./../views/application/login');

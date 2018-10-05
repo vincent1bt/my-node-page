@@ -3,34 +3,31 @@ const knex = require('./../db/databaseConfig.js');
 
 function createPost(post, colors, date) {
   const { title } = post;
+  const slug = urlSlug(title);
   const timestamp = date ? new Date(date) : knex.fn.now();
-  const titleSluged = urlSlug(title);
 
   return knex.insert({
     ...post,
-    slug: titleSluged,
     colors: JSON.stringify(colors),
     created_at: timestamp,
+    slug,
   }, 'id').into('posts');
 }
 
-function updatePost(id, post, colors ) {
-  const slug = urlSlug(post.title);
+function updatePost(id, post, colors) {
+  const { title } = post;
+  const slug = urlSlug(title);
   const timestamp = knex.fn.now();
 
-  const postWithSlug = {
+  return knex('posts').where('id', id).update({
     ...post,
+    colors: JSON.stringify(colors),
     updated_at: timestamp,
     slug,
-  };
-
-  return knex('posts').where('id', id).update({
-    ...postWithSlug,
-    colors: JSON.stringify(colors),
   });
 }
 
-function deleteFromPost(id) {
+function deletePost(id) {
   return knex('posts').where('id', id).limit(1).del();
 }
 
@@ -57,7 +54,7 @@ function getPostsByPage(page = 0) {
     .orderBy("created_at", 'desc');
 }
 
-function getPosts() {
+function getAllPosts() {
   return knex.select(['title', 'id']).from('posts')
     .orderBy("updated_at", 'desc');
 }
@@ -74,9 +71,9 @@ module.exports = {
   createPost,
   countPosts,
   getPost,
-  getPosts,
+  getAllPosts,
   getPostsByPage,
   updatePost,
-  deleteFromPost,
+  deletePost,
   searchPosts,
 };

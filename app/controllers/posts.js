@@ -1,26 +1,25 @@
-const { getCategories } = require('./../models/category');
-const { errorInApp } = require('./../utils/error.js');
-
+const { getAllCategories } = require('./../models/category');
 const {
   getPostsByPage,
   countPosts,
   createPost,
   getPost,
   updatePost,
-  deleteFromPost,
+  deletePost,
   searchPosts,
 } = require('./../models/post');
-
 const {
   savePostCategories,
   updatePostCategories,
   getPostCategories,
   deletePostCategories,
 } = require('./../models/postCategories');
+const { handleError } = require('./../utils/error.js');
 
 async function index(request, response, next) {
   try {
     const { page } = request.query;
+    //check if i can get the count in the above query
     const posts = await getPostsByPage(page);
     const [{ count }] = await countPosts();
     const limit = 5;
@@ -30,13 +29,10 @@ async function index(request, response, next) {
     next();
 
   } catch (serverError) {
-    console.log(serverError, 'Error on index request');
-
-    const error = errorInApp("Error on index request");
-    request.flash('error', serverError);
-    response.redirect('/admin');
+    handleError(response, request, serverError);
   }
 }
+
 
 async function show(request, response, next) {
   try {
@@ -53,26 +49,19 @@ async function show(request, response, next) {
     next();
 
   } catch (serverError) {
-    console.log(serverError, 'Error on show(posts) request');
-
-    const error = errorInApp("Error on show view(post)");
-    request.flash('error', serverError);
-    response.redirect('/admin');
+    handleError(response, request, serverError);
   }
 }
 
 async function newPost(request, response, next) {
   try {
     const queries = ['id', 'name'];
-    const categories = await getCategories(queries);
+    const categories = await getAllCategories(queries);
     request.categories = categories;
     next();
-  } catch (serverError) {
-    console.log(serverError, 'Error on create request');
 
-    const error = errorInApp("Error on new view", serverError);
-    request.flash('error', error);
-    response.redirect('/admin');
+  } catch (serverError) {
+    handleError(response, request, serverError);
   }
 }
 
@@ -85,11 +74,7 @@ async function create(request, response, next) {
     next();
 
   } catch (serverError) {
-    console.log(serverError, 'Error on create(posts) request');
-
-    const error = errorInApp("Error on create post", serverError);
-    request.flash('error', serverError);
-    response.redirect('/posts/new');
+    handleError(response, request, serverError);
   }
 }
 
@@ -98,16 +83,13 @@ async function edit(request, response, next) {
     const { id } = request.params;
     const [post] = await getPost(id);
     const queries = ['id', 'name'];
-    const categories = await getCategories(queries);
+    const categories = await getAllCategories(queries);
     request.categories = categories;
     request.post = post;
     next();
-  } catch (serverError) {
-    console.log(serverError, 'Error on edit(posts) request');
 
-    const error = errorInApp("Error on edit view", serverError);
-    request.flash('error', error);
-    response.redirect('/admin');
+  } catch (serverError) {
+    handleError(response, request, serverError);
   }
 }
 
@@ -119,28 +101,19 @@ async function update(request, response, next) {
     next();
 
   } catch (serverError) {
-    console.log(serverError, 'Error on update(post) request');
-
-    const error = errorInApp("Error updating the post", serverError);
-    const { id } = request.body;
-
-    request.flash('error', error);
-    response.redirect(301, `/posts/edit/${id}`);
+    handleError(response, request, serverError);
   }
 }
 
-async function deletePost(request, response, next) {
+async function destroy(request, response, next) {
   try {
     const { id } = request.body;
     await deletePostCategories(id);
-    await deleteFromPost(id);
+    await deletePost(id);
     next();
-  } catch (serverError) {
-    console.log(serverError, 'Error on delete(posts) request');
 
-    const error = errorInApp("Error on delete post", serverError);
-    request.flash('error', error);
-    response.redirect('/admin');
+  } catch (serverError) {
+    handleError(response, request, serverError);
   }
 }
 
@@ -152,11 +125,7 @@ async function search(request, response, next) {
     next();
 
   } catch (serverError) {
-    console.error(serverError, 'Error on search(posts) request');
-
-    const error = errorInApp("Error on search posts", serverError);
-    request.flash('error', error);
-    response.redirect('/admin');
+    handleError(response, request, serverError);
   }
 }
 
@@ -167,6 +136,6 @@ module.exports = {
   newPost,
   update,
   edit,
-  deletePost,
+  destroy,
   search,
 };

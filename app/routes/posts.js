@@ -4,12 +4,14 @@ const react = require('react');
 const { ensureLoggedIn } = require('connect-ensure-login');
 const { renderToString } = require('react-dom/server');
 
-const ShowComponent = require('./../views/posts/show');
-const EditComponent = require('./../views/posts/edit');
-const NewComponent = require('./../views/posts/new');
-const IndexComponent = require('./../views/posts/index');
-const SearchComponent = require('./../views/posts/search');
 const MetaComponent = require('./../views/meta');
+const {
+  ShowComponent,
+  EditComponent,
+  NewComponent,
+  IndexComponent,
+  SearchComponent
+} = require('./../views/posts/components');
 
 const indexTemplate = require('./../views/posts/indexTemplate');
 const showTemplate = require('./../views/posts/showTemplate');
@@ -22,7 +24,7 @@ const {
   show,
   newPost,
   update,
-  deletePost,
+  destroy,
   edit,
   search,
 } = require('./../controllers/posts');
@@ -79,7 +81,7 @@ postsRouter.put('/', [ensureLoggedIn("/posts"), updatePostValidation, update], (
   response.redirect(301, `/posts/${id}`);
 });
 
-postsRouter.delete('/', [ensureLoggedIn("/posts"), deletePost], (request, response) => {
+postsRouter.delete('/', [ensureLoggedIn("/posts"), destroy], (request, response) => {
   response.redirect(301, '/admin');
 });
 

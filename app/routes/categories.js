@@ -1,13 +1,16 @@
 const express = require('express');
-const { ensureLoggedIn } = require('connect-ensure-login');
 const categoriesRouter = express.Router({ mergeParams: true });
 const react = require('react');
+const { ensureLoggedIn } = require('connect-ensure-login');
 const { renderToString } = require('react-dom/server');
 
-const IndexComponent = require('./../views/categories/index');
-const NewComponent = require('./../views/categories/new');
-const EditComponent = require('./../views/categories/edit');
-const ShowComponent = require('./../views/categories/show');
+const {
+  ShowComponent,
+  EditComponent,
+  NewComponent,
+  IndexComponent,
+  SearchComponent
+} = require('./../views/categories/components');
 
 const indexTemplate = require('./../views/categories/indexTemplate');
 const showTemplate = require('./../views/categories/showTemplate');
@@ -19,7 +22,7 @@ const {
   create,
   show,
   update,
-  deleteCategory,
+  destroy,
   edit,
 } = require('./../controllers/categories');
 
@@ -63,7 +66,7 @@ categoriesRouter.put('/', [ensureLoggedIn("/posts"), updateCategoryValidation, u
   response.redirect(301, `/categories/${id}`);
 });
 
-categoriesRouter.delete('/', [ensureLoggedIn("/posts"), deleteCategory], (request, response) => {
+categoriesRouter.delete('/', [ensureLoggedIn("/posts"), destroy], (request, response) => {
   response.redirect(301, '/admin');
 });
 module.exports = categoriesRouter;

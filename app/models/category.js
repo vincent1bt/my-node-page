@@ -16,11 +16,11 @@ function updateCategory(id, name, description, colors ) {
   });
 }
 
-function deleteFromCategory(id) {
+function deleteCategory(id) {
   return knex('categories').where('id', id).limit(1).del();
 }
 
-function getCategories(query = ['id', 'name', 'colors']) {
+function getAllCategories(query = ['id', 'name', 'colors']) {
   return knex.select(query).table('categories');
 }
 
@@ -30,8 +30,8 @@ function getCategory(id) {
 
 module.exports = {
   createCategory,
-  getCategories,
+  getAllCategories,
   getCategory,
   updateCategory,
-  deleteFromCategory,
+  deleteCategory,
 };

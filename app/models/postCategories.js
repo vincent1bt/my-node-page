@@ -1,8 +1,11 @@
 const knex = require('./../db/databaseConfig.js');
 
-function savePostCategories(postId, categories) {
-  const arrayCategories = Array.from(categories);
-  const categoriesQueries = arrayCategories.map(category => ({ post_id: postId, category_id: category }));
+function shouldUpdateCategories(categoriesArray) {
+  return categoriesArray.length > 0;
+}
+
+function savePostCategories(postId, categoriesArray) {
+  const categoriesQueries = categoriesArray.map(category => ({ post_id: postId, category_id: category }));
   return knex.insert(categoriesQueries).into('post_categories');
 }
 
@@ -10,13 +13,16 @@ function deletePostCategories(id) {
   return knex('post_categories').where('post_categories.post_id', id).del();
 }
 
-function deleteCategoryRelations(id) {
+function deleteCategoryPosts(id) {
   return knex('post_categories').where('post_categories.category_id', id).del();
 }
 
-function updatePostCategories(id, categories) {
-  if (!categories) return Promise.resolve();
-  return Promise.all([deletePostCategories(id), savePostCategories(id, categories)]);
+function updatePostCategories(id, categories = []) {
+  const categoriesArray = Array.from(categories);
+  if (shouldUpdateCategories(categoriesArray)) {
+    return Promise.all([deletePostCategories(id), savePostCategories(id, categoriesArray)]);
+  }
+  return Promise.resolve();
 }
 
 function getPostCategories(id) {
@@ -38,7 +44,7 @@ module.exports = {
   savePostCategories,
   updatePostCategories,
   deletePostCategories,
-  deleteCategoryRelations,
+  deleteCategoryPosts,
   getPostCategories,
   getCategoryPosts,
 };

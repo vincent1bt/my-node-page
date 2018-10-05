@@ -17,9 +17,9 @@ const Posts = ({posts, count}) => {
   return (
     <main className="container">
       <section className="container-common_header container-posts_header">
-        <h2 className="container-posts_header-name">
+        <h1 className="container-posts_header-name">
           Vicente Rodríguez blog
-        </h2>
+        </h1>
         <p className="container-posts_header-subname">
           Programación, desarrollo web y más.
         </p>
