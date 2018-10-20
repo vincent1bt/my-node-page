@@ -11,25 +11,26 @@ const About = ({ isAdmin }) => {
         <Header isAdmin={isAdmin} />
         <main className="container">
           <section className="container-common_header">
-            <h3 className="container-title">Sobre mí</h3>
+            <h3 className="container-title">About me</h3>
             <p className="container-text">
-              Hola, mi nombre es <strong>vicente</strong> y esta es mi pagina web donde comparto tutoriales de lo que voy aprendiendo.
-              Si necesitas algún tipo de ayuda puedes preguntar en mi <a href="https://twitter.com/vincent1bt">twitter</a> y con gusto te ayudare.
+              Hello, my name is Vicente and this is my blog. It's built with Node.js. I didn't use any framework because
+              I wanted to code it from scratch and learn in the process. I write tutorials about programing and artificial intelligence.
+              I really enjoy learning these topics and I like helping people so, if you have a doubt or a problem, you can send me a message.
             </p>
-            <p>Las tecnologias que me gustan</p>
+            <a href="https://twitter.com/vincent1bt">Twitter</a> / <a href="https://github.com/vincent1bt">Github</a>
+            <p>I love to work with: </p>
             <ul className="container-list">
               <li>Javascript (React, Redux, Node, Webpack, Gulp)</li>
-              <li>Ruby, Rails</li>
+              <li>Neuronal Networks, Convolutional Neural Networks (CNN), Decision Trees</li>
+              <li>Tensorflow, Keras, Pandas</li>
               <li>Swift</li>
-              <li>Tensorflow, Keras, Data scientist</li>
-              <li>Go</li>
+              <li>Ruby, Rails</li>
               <li>Git</li>
               <li>Html (Css, Sass, Responsive Design)</li>
               <li>PostgreSQL, Mysql, MongoDB</li>
-              <li>Linux (Servidores, Nginx)</li>
               <li>SEO (Google Analytics)</li>
             </ul>
-            <h3 className="container-subtitle">Algunos de mis proyectos</h3>
+            <h3 className="container-subtitle">Some of my projects</h3>
 
           </section>
 

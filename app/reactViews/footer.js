@@ -32,7 +32,7 @@ const Footer = ({ isAdmin }) => {
               <figure className="footer-nav-list-item-link-icon">
                 <img src="/public/images/about.png" alt=""className="footer-nav-list-item-link-icon-image"/>
                 <figcaption className="footer-nav-list-item-link-icon-text">
-                  Sobre
+                  Me
                 </figcaption>
               </figure>
             </a>

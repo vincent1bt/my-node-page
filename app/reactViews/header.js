@@ -26,7 +26,7 @@ const Header = ({ isAdmin }) => (
         <li className="header-nav-list-item">
           <a href="/sobre" className="header-nav-list-item-link">
             <p>
-              Sobre
+              Me
             </p>
           </a>
         </li>

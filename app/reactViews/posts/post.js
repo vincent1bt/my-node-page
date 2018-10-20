@@ -15,7 +15,7 @@ const Post = ({created_at, title, slug, body, colors, categories}) => {
   const itemStyle = {
     background: `linear-gradient(120deg, ${first}, ${second})`,
   };
-  
+
   const dateOptions = {
     year: "numeric",
     month: "long",
@@ -44,7 +44,7 @@ const Post = ({created_at, title, slug, body, colors, categories}) => {
           {categoriesList}
         </div>
 
-        <div width="100%" class="fb-comments" data-href={`https://vincentblog.me/posts/${slug}`} data-numposts="5" data-order-by="reverse_time"></div>
+        <div width="100%" className="fb-comments" data-href={`https://vincentblog.me/posts/${slug}`} data-numposts="5" data-order-by="reverse_time"></div>
       </section>
     </main>
   )

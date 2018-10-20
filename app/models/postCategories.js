@@ -4,7 +4,8 @@ function shouldUpdateCategories(categoriesArray) {
   return categoriesArray.length > 0;
 }
 
-function savePostCategories(postId, categoriesArray) {
+function savePostCategories(postId, categories) {
+  const categoriesArray = typeof categories === "string" ? Array.from(categories) : categories;
   const categoriesQueries = categoriesArray.map(category => ({ post_id: postId, category_id: category }));
   return knex.insert(categoriesQueries).into('post_categories');
 }
