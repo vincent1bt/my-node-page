@@ -19,7 +19,7 @@ const Header = ({ isAdmin }) => (
         <li className="header-nav-list-item">
           <a href="/categories" className="header-nav-list-item-link">
             <p>
-              Categorias
+              Categorías
             </p>
           </a>
         </li>

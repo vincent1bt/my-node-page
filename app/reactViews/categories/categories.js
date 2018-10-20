@@ -28,10 +28,10 @@ const Categories = ({categories}) => {
     <main className="container">
       <section className="container-common_header container-categories_header">
         <h2 className="container-categories_header-name">
-          Categorias
+          Categorías
         </h2>
         <form action="/posts/buscar" method="get" className="container-form">
-          <input type="search" placeholder="Busca algo que quieras aprender" name="term" autoComplete="off" className="container-form-search"/>
+          <input type="search" placeholder="Busca algo" name="term" autoComplete="off" className="container-form-search"/>
           <input type="submit" value="Buscar" className="container-form-button"/>
         </form>
       </section>

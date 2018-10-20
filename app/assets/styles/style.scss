@@ -77,16 +77,17 @@ body {
 .container {
   height: auto;
   display: grid;
-  grid-template-columns: 15% auto 15%;
+  grid-template-columns: 15% 70% 15%;
   margin-bottom: 30px;
   margin-top: 105px;
+  width: 100%;
 
   @media (max-width: 1024px) {
-    grid-template-columns: 5% auto 5%;
+    grid-template-columns: 5% 90% 5%;
   }
 
   @media (max-width: 650px) {
-    grid-template-columns: 1% auto 1%;
+    grid-template-columns: 1% 98% 1%;
     margin-bottom: 70px;
   }
 

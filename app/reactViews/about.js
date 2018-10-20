@@ -17,7 +17,15 @@ const About = ({ isAdmin }) => {
               I wanted to code it from scratch and learn in the process. I write tutorials about programing and artificial intelligence.
               I really enjoy learning these topics and I like helping people so, if you have a doubt or a problem, you can send me a message.
             </p>
-            <a href="https://twitter.com/vincent1bt">Twitter</a> / <a href="https://github.com/vincent1bt">Github</a>
+            <a className="container-networks" href="https://twitter.com/vincent1bt" target="_blank">
+              <img className="container-networks-img" src="/public/images/twitter.png" alt="twitter" />
+              <p className="container-networks-text">Twitter</p>
+            </a>
+
+            <a className="container-networks" href="https://github.com/vincent1bt" target="_blank">
+              <img className="container-networks-img" src="/public/images/github.png" alt="github" />
+              <p className="container-networks-text">Github</p>
+            </a>
             <p>I love to work with: </p>
             <ul className="container-list">
               <li>Javascript (React, Redux, Node, Webpack, Gulp)</li>

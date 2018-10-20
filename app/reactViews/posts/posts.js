@@ -24,7 +24,7 @@ const Posts = ({posts, count}) => {
           Programación, desarrollo web y más.
         </p>
         <form action="/posts/buscar" method="get" className="container-form">
-          <input type="search" placeholder="Busca algo que quieras aprender" name="term" autoComplete="off" className="container-form-search"/>
+          <input type="search" placeholder="Busca algo" name="term" autoComplete="off" className="container-form-search"/>
           <input type="submit" value="Buscar" className="container-form-button"/>
         </form>
       </section>

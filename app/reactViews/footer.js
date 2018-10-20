@@ -10,7 +10,7 @@ const Footer = ({ isAdmin }) => {
           <li className={`footer-nav-list-item footer-nav-list-item-${footerClass}`}>
             <a href="/posts" className="footer-nav-list-item-link">
               <figure className="footer-nav-list-item-link-icon">
-                <img src="/public/images/posts.png" alt=""className="footer-nav-list-item-link-icon-image"/>
+                <img src="/public/images/posts.png" alt="posts" className="footer-nav-list-item-link-icon-image"/>
                 <figcaption className="footer-nav-list-item-link-icon-text">
                   Posts
                 </figcaption>
@@ -20,9 +20,9 @@ const Footer = ({ isAdmin }) => {
           <li className={`footer-nav-list-item footer-nav-list-item-${footerClass}`}>
             <a href="/categories" className="footer-nav-list-item-link">
               <figure className="footer-nav-list-item-link-icon">
-                <img src="/public/images/categories.png" alt=""className="footer-nav-list-item-link-icon-image"/>
+                <img src="/public/images/categories.png" alt="categories" className="footer-nav-list-item-link-icon-image"/>
                 <figcaption className="footer-nav-list-item-link-icon-text">
-                  Categorias
+                  Categorías
                 </figcaption>
               </figure>
             </a>
@@ -30,7 +30,7 @@ const Footer = ({ isAdmin }) => {
         <li className={`footer-nav-list-item footer-nav-list-item-${footerClass}`}>
             <a href="/sobre" className="footer-nav-list-item-link">
               <figure className="footer-nav-list-item-link-icon">
-                <img src="/public/images/about.png" alt=""className="footer-nav-list-item-link-icon-image"/>
+                <img src="/public/images/about.png" alt="Me"className="footer-nav-list-item-link-icon-image"/>
                 <figcaption className="footer-nav-list-item-link-icon-text">
                   Me
                 </figcaption>
@@ -41,7 +41,7 @@ const Footer = ({ isAdmin }) => {
             <li className="footer-nav-list-item footer-nav-list-item-admin">
               <a href="/admin" className="footer-nav-list-item-link">
                 <figure className="footer-nav-list-item-link-icon">
-                  <img src="/public/images/admin.png" alt=""className="footer-nav-list-item-link-icon-image"/>
+                  <img src="/public/images/admin.png" alt="admin" className="footer-nav-list-item-link-icon-image"/>
                   <figcaption className="footer-nav-list-item-link-icon-text">
                     Admin
                   </figcaption>
