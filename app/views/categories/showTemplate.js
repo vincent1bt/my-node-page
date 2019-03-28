@@ -11,8 +11,8 @@ function showTemplate(body) {
       <script async src='https://www.google-analytics.com/analytics.js'></script>
       <head>
         ${metaTemplate}
-        <link rel="stylesheet" type="text/css" href="/public/styles/application.css" />
-        <link rel="stylesheet" type="text/css" href="/public/styles/category.css" />
+        <link rel="stylesheet" type="text/css" href="/public/blog/styles/application.css" />
+        <link rel="stylesheet" type="text/css" href="/public/blog/styles/category.css" />
       </head>
       <body>
         ${body}

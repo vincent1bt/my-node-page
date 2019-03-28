@@ -4,7 +4,7 @@ services:
   mypage-db-service:
     container_name: mypage-db-service
     restart: always
-    build: ./app/db
+    build: ./db
     ports:
       - '5432:5432'
     environment:
@@ -27,7 +27,7 @@ services:
   mypage-nginx-service:
     container_name: mypage-nginx-service
     restart: always
-    build: ./app/nginx
+    build: ./nginx
     ports:
       - '443:443'
     depends_on:

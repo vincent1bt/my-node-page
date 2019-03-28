@@ -20,7 +20,7 @@ const metaTemplate = `
   <link rel="icon" href="https://res.cloudinary.com/vincent1bt/image/upload/v1452713905/favicon128_pmh8op.png" />
   <title>Vicente Rodríguez Blog: Tutoriales de programación y más.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="/public/styles/style.css" />
+  <link rel="stylesheet" type="text/css" href="/public/blog/styles/style.css" />
 `
 
 module.exports = metaTemplate;

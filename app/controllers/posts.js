@@ -19,7 +19,6 @@ const { handleError } = require('./../utils/error.js');
 async function index(request, response, next) {
   try {
     const { page } = request.query;
-    //check if i can get the count in the above query
     const posts = await getPostsByPage(page);
     const [{ count }] = await countPosts();
     const limit = 5;

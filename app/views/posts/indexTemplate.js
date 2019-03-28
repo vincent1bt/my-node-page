@@ -12,7 +12,7 @@ function indexTemplate(body) {
       <head>
         ${metaTemplate}
         <link rel="canonical" href="https://vincentblog.xyz/posts" />
-        <link rel="stylesheet" type="text/css" href="/public/styles/application.css" />
+        <link rel="stylesheet" type="text/css" href="/public/blog/styles/application.css" />
       </head>
       <body>
         ${body}

@@ -3,7 +3,7 @@ version: "3.1"
 services:
   mypage-db-service:
     container_name: mypage-db-service
-    build: ./app/db
+    build: ./db
     ports:
       - '5432:5432'
     environment:
@@ -32,9 +32,9 @@ services:
       - mypage-db-service
   mypage-nginx-service:
     container_name: mypage-nginx-service
-    build: ./app/nginx
+    build: ./nginx
     volumes:
-      - './app/nginx/public:/usr/local/var/www/public'
+      - './nginx/public:/usr/local/var/www/public'
     ports:
       - '443:443'
     depends_on:

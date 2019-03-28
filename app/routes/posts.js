@@ -32,9 +32,12 @@ const {
 const authenticated = require('./../utils/auth');
 
 postsRouter.get('/', index, (request, response) => {
+  let pageNumber = request.url.substr(-1);
+  if (pageNumber == "/") pageNumber = 0;
+
   const { posts, count } = request;
   const isAdmin = authenticated(request);
-  const body = renderToString(react.createElement(IndexComponent, { posts, count, isAdmin }));
+  const body = renderToString(react.createElement(IndexComponent, { posts, count, pageNumber, isAdmin }));
   const html = indexTemplate(body);
   response.status(200).send(html);
 });

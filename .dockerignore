@@ -1,13 +1,14 @@
-/node_modules
+node_modules
 npm-debug.log
 /tmp
 /tests
-
+/assets_files
 .git
+
+/nginx/projects
 
 .gitignore
 .eslintrc.json
 docker-compose.yml
 debug-compose.yml
-.babelrc
-webpack.config.js
+README.md

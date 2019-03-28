@@ -1,4 +1,4 @@
-const knex = require('./../db/databaseConfig.js');
+const knex = require('./../../db/databaseConfig.js');
 
 function shouldUpdateCategories(categoriesArray) {
   return categoriesArray.length > 0;

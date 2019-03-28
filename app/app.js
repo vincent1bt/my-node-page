@@ -10,6 +10,7 @@ const flash = require('connect-flash');
 
 const postsRouter = require('./routes/posts');
 const categoriesRouter = require('./routes/categories');
+const projectsRouter = require('./routes/projects');
 const applicationRouter = require('./routes/application');
 
 const errorTemplate = require('./views/errorTemplate');
@@ -36,8 +37,9 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'", "*.facebook.com", "www.google-analytics.com", "res.cloudinary.com", "maxcdn.bootstrapcdn.com", "cdn.jsdelivr.net"],
-      scriptSrc: ["'self'", "'unsafe-inline'", "www.google-analytics.com", "cdn.jsdelivr.net", "*.facebook.net"],
+      scriptSrc: ["'self'", "'unsafe-eval'", "'unsafe-inline'", "www.google-analytics.com", "cdn.jsdelivr.net", "*.facebook.net"],
       styleSrc: ["'self'", "'unsafe-inline'", "cdn.jsdelivr.net", "maxcdn.bootstrapcdn.com"],
+      imgSrc: ["'self'", "res.cloudinary.com", "blob:", "data:", "www.google-analytics.com", "*.facebook.com", "cdn.jsdelivr.net"]
     }
   }
 }));
@@ -47,9 +49,10 @@ app.use(passport.session());
 
 app.use('/posts', postsRouter);
 app.use('/categories', categoriesRouter);
+app.use('/portfolio', projectsRouter);
 app.use('/', applicationRouter);
 app.use((request, response) => {
-  const text =  "No encontramos lo que buscabas"
+  const text = "No encontramos lo que buscabas";
   const html = errorTemplate(text);
   response.status(404).send(html);
 });

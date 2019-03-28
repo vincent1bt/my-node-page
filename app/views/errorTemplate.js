@@ -4,8 +4,8 @@ function errorTemplate(text, error = null) {
     <html lang="en" dir="ltr">
       <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="/public/styles/style.css" />
-        <link rel="stylesheet" type="text/css" href="/public/styles/application.css" />
+        <link rel="stylesheet" type="text/css" href="/public/blog/styles/style.css" />
+        <link rel="stylesheet" type="text/css" href="/public/blog/styles/application.css" />
         <title>Error page</title>
       </head>
       <body>

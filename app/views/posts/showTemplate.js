@@ -9,9 +9,9 @@ function showTemplate(body, meta) {
       <script async src='https://www.google-analytics.com/analytics.js'></script>
       <head>
         ${meta}
-        <link rel="stylesheet" type="text/css" href="/public/styles/post.css" />
-        <script async src="/public/js/show.js"></script>
-        <script async src="/public/js/highlight.pack.js"></script>
+        <link rel="stylesheet" type="text/css" href="/public/blog/styles/post.css" />
+        <script async src="/public/blog/js/show.js"></script>
+        <script async src="/public/blog/js/highlight.pack.js"></script>
       </head>
       <body>
         ${body}

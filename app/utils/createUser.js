@@ -11,7 +11,7 @@ async function create() {
     const hashedPassword = await bcrypt.hash(password, saltRounds);
     console.log(`Creating user with credentials: username: ${username}, password: ${hashedPassword}`);
     await createUser(username, hashedPassword);
-    console.log('user created');
+    console.log('User created');
   } catch (serverError) {
     console.log(serverError, 'Error on create(user) request');
   }

@@ -1,5 +1,5 @@
 const urlSlug = require('url-slug');
-const knex = require('./../db/databaseConfig.js');
+const knex = require('./../../db/databaseConfig.js');
 
 function createPost(post, colors, date) {
   const { title } = post;
