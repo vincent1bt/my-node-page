@@ -32,9 +32,10 @@ async function create(request, response, next) {
 
 async function show(request, response, next) {
   try {
+    const { lang } = request.query;
     const { id } = request.params;
     const [category] = await getCategory(id);
-    const posts = await getCategoryPosts(id);
+    const posts = await getCategoryPosts(id, lang);
     request.category = category;
     request.posts = posts;
     next();

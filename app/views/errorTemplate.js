@@ -27,14 +27,14 @@ function errorTemplate(text, error = null) {
               <li class="header-nav-list-item">
                 <a href="/categories" class="header-nav-list-item-link">
                   <p>
-                    Categorias
+                    Categories
                   </p>
                 </a>
               </li>
               <li class="header-nav-list-item">
                 <a href="/sobre" class="header-nav-list-item-link">
                   <p>
-                    Sobre
+                    About Me
                   </p>
                 </a>
               </li>
@@ -47,9 +47,9 @@ function errorTemplate(text, error = null) {
               ${text}
             </h4>
             <p class="container-posts_header-subname">
-              Por favor intenta otra vez.
+              Try again.
             </p>
-            <a class="container-common_header-main_link" href="/">Inicio</a>
+            <a class="container-common_header-main_link" href="/">Main page</a>
           </section>
           <section class="container-content">
             ${error || ""}

@@ -1,6 +1,6 @@
 const React = require('react');
 
-const Footer = ({ isAdmin }) => {
+const Footer = ({ lang='en', isAdmin }) => {
   const footerClass = isAdmin ? "admin" : "normal";
 
   return (
@@ -22,13 +22,13 @@ const Footer = ({ isAdmin }) => {
               <figure className="footer-nav-list-item-link-icon">
                 <img src="/public/blog/images/categories.png" alt="categories" className="footer-nav-list-item-link-icon-image"/>
                 <figcaption className="footer-nav-list-item-link-icon-text">
-                  Categorías
+                  Categories
                 </figcaption>
               </figure>
             </a>
           </li>
         <li className={`footer-nav-list-item footer-nav-list-item-${footerClass}`}>
-            <a href="/sobre" className="footer-nav-list-item-link">
+            <a href="/about" className="footer-nav-list-item-link">
               <figure className="footer-nav-list-item-link-icon">
                 <img src="/public/blog/images/about.png" alt="Me"className="footer-nav-list-item-link-icon-image"/>
                 <figcaption className="footer-nav-list-item-link-icon-text">

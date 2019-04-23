@@ -76,6 +76,14 @@ const New = ({categories, errorObject}) => {
                 </select>
              </fieldset>
 
+             <fieldset>
+                <legend>Language</legend>
+                <select className="container-content-form-language" name="post[lang]">
+                  <option value='en' selected="selected">EN</option>
+                  <option value='es'>ES</option>
+                </select>
+             </fieldset>
+
              <input className="container-content-form-button" type="submit" value="Crear Post"/>
             </form>
           </section>

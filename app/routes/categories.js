@@ -43,9 +43,10 @@ categoriesRouter.get('/new', ensureLoggedIn("/posts"), (request, response) => {
 });
 
 categoriesRouter.get('/:id', show, (request, response) => {
+  const { lang } = request.query;
   const { category, posts } = request;
   const isAdmin = authenticated(request);
-  const body = renderToString(react.createElement(ShowComponent, { posts, category, isAdmin }));
+  const body = renderToString(react.createElement(ShowComponent, { posts, category, lang, isAdmin }));
   const html = showTemplate(body);
   response.status(200).send(html);
 });

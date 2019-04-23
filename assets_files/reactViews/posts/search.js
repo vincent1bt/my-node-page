@@ -4,7 +4,7 @@ const Footer = require('./../footer');
 const PostContainer = require('./postContainer');
 
 const DefaultResponse = () => (
-  <p className="container-content-default_response">No hay resultados sobre tu busqueda</p>
+  <p className="container-content-default_response">There are not posts</p>
 )
 
 const Search = ({ posts, term, isAdmin }) => {
@@ -16,11 +16,11 @@ const Search = ({ posts, term, isAdmin }) => {
       <main className="container">
         <section className="container-common_header container-posts_header">
           <h3 className="container-posts_header-name">
-            Busqueda sobre: {term}
+            Posts about: {term}
           </h3>
-          <form action="/posts/buscar" method="get" className="container-form">
-            <input type="search" placeholder="Busca algo que quieras aprender" name="term" autoComplete="off" className="container-form-search"/>
-            <input type="submit" value="Buscar" className="container-form-button"/>
+          <form action="/posts/search" method="get" className="container-form">
+            <input type="search" placeholder="Deep learning" name="term" autoComplete="off" className="container-form-search"/>
+            <input type="submit" value="search" className="container-form-button"/>
           </form>
         </section>
         <section className="container-content">

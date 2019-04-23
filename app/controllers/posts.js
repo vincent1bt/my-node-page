@@ -18,9 +18,9 @@ const { handleError } = require('./../utils/error.js');
 
 async function index(request, response, next) {
   try {
-    const { page } = request.query;
-    const posts = await getPostsByPage(page);
-    const [{ count }] = await countPosts();
+    const { lang, page } = request.query;
+    const posts = await getPostsByPage(lang, page);
+    const [{ count }] = await countPosts(lang);
     const limit = 5;
     const pagination = Math.ceil(count / limit) - 1;
     request.posts = posts;

@@ -32,12 +32,11 @@ const {
 const authenticated = require('./../utils/auth');
 
 postsRouter.get('/', index, (request, response) => {
-  let pageNumber = request.url.substr(-1);
-  if (pageNumber == "/") pageNumber = 0;
-
+  const { lang, page } = request.query;
   const { posts, count } = request;
+
   const isAdmin = authenticated(request);
-  const body = renderToString(react.createElement(IndexComponent, { posts, count, pageNumber, isAdmin }));
+  const body = renderToString(react.createElement(IndexComponent, { posts, count, page, lang, isAdmin }));
   const html = indexTemplate(body);
   response.status(200).send(html);
 });
@@ -49,7 +48,7 @@ postsRouter.get('/new', [ensureLoggedIn("/posts"), newPost], (request, response)
   response.status(200).send(body);
 });
 
-postsRouter.get('/buscar', search, (request, response) => {
+postsRouter.get('/search', search, (request, response) => {
   const { posts } = request;
   const isAdmin = authenticated(request);
   const { term } = request.query;

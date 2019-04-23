@@ -39,12 +39,12 @@ const Edit = ({post, categories, errorObject}) => {
 
               <input type="hidden" name="id" value={id}/>
               <fieldset>
-                <legend>Titulo</legend>
+                <legend>Title</legend>
                 <input className="container-content-form-input"  type="text" name="post[title]" value={title}/>
               </fieldset>
 
               <fieldset className="container-content-form-colors">
-                <legend>Colores</legend>
+                <legend>Colors</legend>
                 <input type="text" name="colors[first]" value={colors.first} autocomplete="none" className="firstColor"/>
                 <input type="text" name="colors[second]" value={colors.second} autocomplete="none" className="secondColor"/>
                 <input type="submit" value="Checar" className="check"/>
@@ -70,9 +70,17 @@ const Edit = ({post, categories, errorObject}) => {
              </fieldset>
 
             <fieldset>
-                <legend>Categorias</legend>
+                <legend>Categories</legend>
                 <select className="container-content-form-select" name="categories" multiple>
                   {categoryList}
+                </select>
+             </fieldset>
+
+             <fieldset>
+                <legend>Language</legend>
+                <select className="container-content-form-language" name="post[lang]">
+                  <option value='en' selected="selected">EN</option>
+                  <option value='es'>ES</option>
                 </select>
              </fieldset>
 

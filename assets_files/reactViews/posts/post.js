@@ -39,7 +39,7 @@ const Post = ({created_at, title, slug, body, colors, categories}) => {
       <section className="container-content" >
         <ReactMarkdown source={body} />
 
-        <h4>Categorías</h4>
+        <h4>Categories</h4>
         <div className="container-content-category">
           {categoriesList}
         </div>

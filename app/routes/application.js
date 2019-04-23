@@ -34,7 +34,7 @@ applicationRouter.get('/admin', [ensureLoggedIn("/posts"), admin], (request, res
   response.status(200).send(body);
 });
 
-applicationRouter.get('/sobre', (request, response) => {
+applicationRouter.get(['/sobre', '/about'], (request, response) => {
   const { user } = request;
   const isAdmin = authenticated(request);
   const body = renderToString(react.createElement(AboutComponent, { isAdmin }));

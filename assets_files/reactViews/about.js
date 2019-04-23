@@ -13,7 +13,7 @@ const About = ({ isAdmin }) => {
           <section className="container-common_header">
             <h3 className="container-title">About me</h3>
             <p className="container-text">
-              Hello, my name is Vicente and this is my blog. It's built with Node.js and Express. I write tutorials about programing and artificial intelligence.
+              Hello, my name is Vicente and this is my blog. It's built with Node.js, Express and Docker. I write tutorials about programing and artificial intelligence.
               I really enjoy learning these topics and I like helping people so, if you have a doubt or a problem, you can send me a message.
             </p>
             <a className="container-networks" href="https://twitter.com/vincent1bt" target="_blank">
@@ -61,7 +61,7 @@ const About = ({ isAdmin }) => {
             </p>
             <p>
               I explain the dataset that I used and some parts of the
-              process through posts like in <a target="_blank" href="https://vincentblog.xyz/posts/detectando-alzheimer-con-deep-learning">detecting alzheimer with deep learning </a>.
+              process through posts like in <a target="_blank" href="https://vincentblog.xyz/posts/detecting-alzheimer-s-desease-with-deep-learning">detecting Alzheimer’s desease with deep learning </a>.
             </p>
 
             <h4 className="container-content-h4">
@@ -84,7 +84,7 @@ const About = ({ isAdmin }) => {
             </div>
 
             <p>
-              In <a target="_blank" href="https://vincentblog.xyz/posts/machine-learning-in-healthcare-parte-2">this blog post</a> I explain more about the project in Spanish.
+              In <a target="_blank" href="https://vincentblog.xyz/posts/machine-learning-in-healthcare-part-2">this blog post</a> I explain more about the project.
             </p>
             <p>
               The code of this app is on <a target="_blank" href="https://github.com/vincent1bt/Malaria-detection-iOS-App" target="_blank">Github</a> and
@@ -115,13 +115,13 @@ const About = ({ isAdmin }) => {
               Posts about Machine Learning and Deep Learning
             </h4>
             <p>
-              In this blog I have posts that explain concepts about machine learning like <a target="_blank" href="https://vincentblog.xyz/posts/decision-trees-arboles-de-decision-para-clasificar-en-python">Decision trees</a> or <a target="_blank" href="https://vincentblog.xyz/posts/logistic-regression-desde-cero-con-python">Logistic regression </a>
-              and posts about deep learning like <a target="_blank" href="https://vincentblog.xyz/posts/redes-neuronales-desde-cero-con-python">Neuronal networks from scratch in python</a>, <a target="_blank" href="https://vincentblog.xyz/posts/backpropagation-y-gradient-descent">Backpropagation and Gradient Descent</a>, <a target="_blank" href="https://vincentblog.xyz/posts/redes-neuronales-convolucionales">Convolutional neural networks</a> and 
-              <a target="_blank" href="https://vincentblog.xyz/posts/como-hacer-deploy-de-un-modelo-de-keras"> How to deploy a keras model to Google Cloud</a>. With this I can learn more about the machine learning world
-              and help people in the process.
+              In this blog I have posts that explain concepts about machine learning like <a target="_blank" href="https://vincentblog.xyz/posts/decision-trees-in-python">Decision trees</a> or <a target="_blank" href="https://vincentblog.xyz/posts/logistic-regression-from-scratch-in-python">Logistic regression </a>
+              and posts about deep learning like <a target="_blank" href="https://vincentblog.xyz/posts/neural-networks-from-scratch-in-python">Neuronal networks from scratch in python</a>, <a target="_blank" href="https://vincentblog.xyz/posts/backpropagation-and-gradient-descent">Backpropagation and Gradient Descent</a>, <a target="_blank" href="https://vincentblog.xyz/posts/convolutional-neural-networks">Convolutional neural networks</a> and 
+              <a target="_blank" href="https://vincentblog.xyz/posts/how-to-deploy-a-keras-model-to-google-cloud"> How to deploy a keras model to Google Cloud</a>. With this I can learn more about the machine learning world
+              and share knowledge in the process.
             </p>
             <p>
-              All the posts are available in Spanish, when I started learning about this world I could not find
+              My posts are available in English and Spanish, when I started learning about this world I could not find
               good posts in Spanish. Therefore, I made these posts hoping that I can help someone who does not
               speak English.
             </p>

@@ -126,10 +126,22 @@
         }
       }
 
+      &-language {
+        -webkit-appearance: none;
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        overflow: auto;
+        padding: 5px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
       &-button {
         border: 0;
         background: #2980b9;
-        //background: linear-gradient(120deg, #1d3e81, #b52a1d);
         padding: 10px;
         border-radius: 4px;
         cursor: pointer;

@@ -33,10 +33,11 @@ function getPostCategories(id) {
     .join('categories', 'post_categories.category_id', '=', 'categories.id');
 }
 
-function getCategoryPosts(id) {
+function getCategoryPosts(id, lang='en') {
   return knex.select('posts.id', 'posts.slug', 'posts.title', 'posts.created_at', 'posts.colors')
     .from('post_categories')
     .where('post_categories.category_id', id)
+    .andWhere('posts.lang', lang)
     .join('posts', 'post_categories.post_id', '=', 'posts.id')
     .orderBy("created_at", 'desc');
 }

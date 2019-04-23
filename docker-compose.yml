@@ -17,6 +17,7 @@ services:
     build: ./
     volumes:
       - './app/:/nodeapp/app'
+      - './db/:/nodeapp/db'
     command: nodemon server.js
     environment:
       - DATABASE_DEV_URL=${DATABASE_DEV_URL}

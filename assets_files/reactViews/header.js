@@ -4,7 +4,7 @@ const Header = ({ isAdmin }) => (
   <header className="header">
     <div className="header-logo">
         <h2 className="header-logo-title">
-          Vicente Rodriguez
+          Vicente Rodríguez
         </h2>
     </div>
     <nav className="header-nav">
@@ -19,12 +19,12 @@ const Header = ({ isAdmin }) => (
         <li className="header-nav-list-item">
           <a href="/categories" className="header-nav-list-item-link">
             <p>
-              Categorías
+              Categories
             </p>
           </a>
         </li>
         <li className="header-nav-list-item">
-          <a href="/sobre" className="header-nav-list-item-link">
+          <a href="/about" className="header-nav-list-item-link">
             <p>
               About Me
             </p>
@@ -43,5 +43,6 @@ const Header = ({ isAdmin }) => (
     </nav>
   </header>
 );
+
 
 module.exports = Header;

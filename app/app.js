@@ -16,7 +16,7 @@ const applicationRouter = require('./routes/application');
 const errorTemplate = require('./views/errorTemplate');
 
 const configurePassport = require('./utils/passport');
-const weekTime =  7 * 24 * 3600 * 1000;
+const weekTime = 7 * 24 * 3600 * 1000;
 
 configurePassport();
 const app = express();
@@ -52,7 +52,7 @@ app.use('/categories', categoriesRouter);
 app.use('/portfolio', projectsRouter);
 app.use('/', applicationRouter);
 app.use((request, response) => {
-  const text = "No encontramos lo que buscabas";
+  const text = "404 We did not find what you wanted";
   const html = errorTemplate(text);
   response.status(404).send(html);
 });

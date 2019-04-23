@@ -44,11 +44,12 @@ function getPost(id) {
   return getPostById(id);
 }
 
-function getPostsByPage(page = 0) {
+function getPostsByPage(lang='en', page=0) {
   const limit = 5;
   const offset = page * limit;
   return knex.select(['title', 'slug', 'id', 'created_at', 'colors', 'description'])
     .from('posts')
+    .where('lang', '=', lang)
     .limit(limit)
     .offset(offset)
     .orderBy("created_at", 'desc');
@@ -59,8 +60,8 @@ function getAllPosts() {
     .orderBy("updated_at", 'desc');
 }
 
-function countPosts() {
-  return knex('posts').count('id');
+function countPosts(lang='en') {
+  return knex('posts').where('lang', '=', lang).count('id');
 }
 
 function searchPosts(term) {

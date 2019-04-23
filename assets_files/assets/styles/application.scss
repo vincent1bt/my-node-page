@@ -32,6 +32,10 @@
     &-subname {
       margin: 10px;
     }
+
+    &-link {
+      color: #2980b9;
+    }
   }
 
   &-category_header {
@@ -134,10 +138,6 @@
         font-size: 1.3em;
         margin-top: 20px;
         margin-bottom: 5px;
-      }
-
-      &-description {
-
       }
     }
 
