@@ -34,14 +34,14 @@ const About = ({ isAdmin }) => {
               Alzheimer's disease Image detection
             </h4>
             <p>
-              I made this neuronal network with Keras and the Mobile Net v2 architecture.
+              I made this neuronal network with TensorFlow and the Mobile Net v2 architecture.
             </p>
             <p>
               The images that I used to train this model are from the <strong>ADNI</strong> dataset <strong>(Alzheimer’s Disease Neuroimaging Initiative) </strong>
               <a target="_blank" href="http://adni.loni.usc.edu"> adni.loni.usc.edu</a>. I converted the 3d images from the dataset to 2d jpg images.
             </p>
             <p>
-                The model has a <strong>sensitivity of 98.9% and a specificity of 99%. </strong>
+                The model has a <strong>sensitivity and a specificity of 99%. </strong>
                  The code of this project is available <a target="_blank" href="https://nbviewer.jupyter.org/github/vincent1bt/Healthy-notebooks/blob/master/AD.ipynb">as a Jupyter notebook.</a>
             </p>
             <p>

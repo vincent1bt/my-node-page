@@ -19,7 +19,7 @@ docker-compose build
 docker-compose run mypage-app-service knex migrate:latest --knexfile ./db/knexfile.js
 
 ## Give createUser file permissions
-chmod 755 createUser.js
+chmod 755 app/utils/createUser.js
 
 ## create an user and password
 docker-compose run mypage-app-service app/utils/createUser.js bloguser blogpassword

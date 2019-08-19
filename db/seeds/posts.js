@@ -27,7 +27,7 @@ exports.seed = (knex, Promise) => {
       }),
       knex('categories').insert({
         name: "Ruby",
-        body: "Lenguaje de programación multi usos",
+        description: "Lenguaje de programación multi usos",
         colors: JSON.stringify(colorsJson),
       }),
       knex('post_categories').insert({
