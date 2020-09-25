@@ -28,7 +28,16 @@ services:
     container_name: mypage-nginx-service
     restart: always
     build: ./nginx
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
     ports:
+      - '80:80'
       - '443:443'
     depends_on:
       - mypage-app-service
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
